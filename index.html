@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>F2M Link - মিডিয়া লিংক সমূহ</title>
+    <!-- Bootstrap 5 + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 🌟 রং পরিবর্তন: হলুদ থিম + যে কোন সমস্যার জন্য আমাদের সাথে কথা বলুন
+Telegram Group এর সাথে Active থাকুন
+https://t.me/bdix_ebox_live_tv🌟 */
+        :root {
+            --primary-color: #e6b800;      /* সোনালি-হলুদ প্রাইমারি */
+            --secondary-color: #d4a017;
+            --sidebar-start: #f5b81b;      /* হলুদ গ্রেডিয়েন্ট শুরু */
+            --sidebar-end: #d48f0b;         /* গাঢ় হলুদ শেষ */
+            --background-color: #fffef7;    /* হালকা ক্রিমি ব্যাকগ্রাউন্ড */
+            --card-bg: #ffffff;
+            --text-color: #2c2b26;
+            --text-hover: #b47c00;
+            --section-title: #b5760a;
+            --brand-gradient-start: #f7c530;
+            --brand-gradient-end: #e6a017;
+            --footer-bg: #cf9f2e;
+            --footer-text: #2d2b1f;
+            --modal-bg: #fff6e0;
+            --modal-text: #5a3e0b;
+            --modal-width: 520px;
+            --modal-height: auto;
+            --modal-radius: 20px;
+            --modal-padding: 28px 24px;
+            --modal-shadow: 0 20px 30px rgba(0,0,0,0.2);
+            --modal-text-align: center;
+            --marquee-bg: #f3bc2c;
+            --marquee-text: #2c1e04;
+            --marquee-font-size: 1rem;
+            --marquee-speed: 28s;
+            --border-glow: rgba(230, 184, 0, 0.4);
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', 'Poppins', 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .layout-row {
+            flex: 1;
+        }
+
+        /* সাইডবার – হলুদ থিমে আপডেটেড */
+        .sidebar {
+            background: linear-gradient(135deg, var(--sidebar-start) 0%, var(--sidebar-end) 100%);
+            color: #2c1f05;
+            min-height: 100vh;
+            height: 100%;
+            position: sticky;
+            top: 0;
+            padding: 20px 0;
+            box-shadow: 4px 0 16px rgba(0,0,0,0.08);
+            border-right: 1px solid rgba(255,215,100,0.6);
+        }
+
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .brand-inline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo {
+            max-width: 85px;
+            max-height: 85px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #fdee87, #f5bc2c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-shadow: none;
+        }
+
+        .nav-section {
+            padding: 12px 20px;
+            color: #2d2818;
+            text-decoration: none;
+            display: block;
+            border-left: 4px solid transparent;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            border-radius: 0 20px 20px 0;
+            margin: 6px 12px 6px 0;
+        }
+
+        .nav-section:hover, .nav-section.active {
+            background: rgba(255, 250, 200, 0.85);
+            color: #7a5000;
+            border-left-color: #f5b700;
+            font-weight: 600;
+            transform: translateX(2px);
+        }
+
+        /* প্রধান কন্টেন্ট স্টাইল */
+        .main-content {
+            padding: 32px 28px;
+        }
+
+        .search-box input {
+            border-radius: 60px;
+            padding: 14px 26px;
+            border: 2px solid #ffe0a3;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(230, 184, 0, 0.2);
+        }
+
+        .section-header h2 {
+            color: var(--section-title);
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            border-left: 5px solid #f5bc2c;
+            padding-left: 18px;
+            display: inline-block;
+        }
+
+        .section-header p {
+            color: #6b5a2e;
+            font-size: 1rem;
+        }
+
+        /* লিংক কার্ড - উজ্জ্বল হলুদ আভা */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 12px 8px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: #3e2c0c;
+            border: 1px solid #ffe2a4;
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fffff2;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 24px -8px rgba(214, 158, 0, 0.3);
+            border-color: #f5c542;
+            background: #fffae9;
+            color: #b9770e;
+        }
+
+        .link-card h5 {
+            margin-bottom: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 20px;
+            font-weight: 500;
+            border-top: 2px solid #f5dc8c;
+        }
+
+        /* মোডাল - হলুদ টাচ */
+        .custom-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 2100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-modal-overlay.show {
+            display: flex;
+        }
+
+        .custom-modal {
+            background: var(--modal-bg);
+            color: var(--modal-text);
+            width: var(--modal-width);
+            max-width: 90vw;
+            border-radius: var(--modal-radius);
+            padding: var(--modal-padding);
+            box-shadow: var(--modal-shadow);
+            position: relative;
+            text-align: var(--modal-text-align);
+            border: 1px solid #f9cf6b;
+            backdrop-filter: blur(2px);
+        }
+
+        .custom-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #aa7c1c;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .custom-modal-close:hover {
+            color: #d4920a;
+            transform: scale(1.1);
+        }
+
+        .marquee-bar {
+            background: var(--marquee-bg);
+            color: var(--marquee-text);
+            font-size: var(--marquee-font-size);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #ffdf8c;
+        }
+
+        .marquee-track {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee var(--marquee-speed) linear infinite;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            padding: 0 40px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* রেসপন্সিভ টুইক */
+        @media (max-width: 991px) {
+            .sidebar {
+                position: relative;
+                min-height: auto;
+                height: auto;
+                padding: 12px 0;
+            }
+            .sidebar-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .brand-inline {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .mobile-menu-toggle {
+                display: inline-flex;
+                background: rgba(0,0,0,0.1);
+                border: none;
+                border-radius: 12px;
+                padding: 8px 12px;
+                gap: 5px;
+                flex-direction: column;
+                cursor: pointer;
+            }
+            .mobile-menu-toggle .bar {
+                width: 24px;
+                height: 2px;
+                background: #3b2a0e;
+                display: block;
+                transition: all 0.2s;
+            }
+            .sidebar-nav {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, opacity 0.3s ease;
+                padding: 0 12px;
+            }
+            .sidebar.open .sidebar-nav {
+                max-height: 500px;
+                opacity: 1;
+                padding: 12px 12px;
+            }
+            .nav-section {
+                margin: 8px 0;
+                border-radius: 30px;
+                text-align: center;
+            }
+            .main-content {
+                padding: 20px 16px;
+            }
+            .link-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .link-grid {
+                grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+            }
+            .link-card h5 {
+                font-size: 0.85rem;
+            }
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- মার্কি বার (হলুদ টেক্সট) -->
+    <div class="marquee-bar">
+        <div class="marquee-track">
+            <span class="marquee-text"><i class="fas fa-star-of-life"></i> যেকোনো সমস্যায় Suruj এর সাথে যোগাযোগ করুন। <i class="fas fa-link"></i> হ্যালো ফ্রেন্ড! সব লিংক আপডেটেড</span>
+        </div>
+    </div>
+
+    <div class="container-fluid page-wrapper g-0">
+        <div class="row layout-row g-0">
+            <!-- সাইডবার - হলুদ থিমে রূপান্তরিত -->
+            <div class="col-lg-3 col-xl-2 sidebar" id="mainSidebar">
+                <div class="sidebar-header">
+                    <div class="brand-inline">
+                        <div class="brand-text text-center">
+                            <h3 class="brand-gradient-text fw-bold"><i class="fas fa-sun"></i> F2M Link</h3>
+                            <p class="mb-0 small fw-semibold" style="color:#3a2a07;">✨ লিংক ওভার ক্লাউড ✨</p>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="মেনু টগল">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+                <div class="sidebar-nav mt-2" id="sidebarNav">
+                    <a href="#" class="nav-section active" data-filter="all">
+                        <i class="fas fa-th-large me-2"></i> সব লিংক
+                    </a>
+                    <a href="#" class="nav-section" data-filter="FTP &amp; Movie Server">
+                        <i class="fas fa-server me-2"></i> FTP & মুভি সার্ভার
+                    </a>
+                    <a href="#" class="nav-section" data-filter="Live TV Server">
+                        <i class="fas fa-tv me-2"></i> লাইভ টিভি সার্ভার
+                    </a>
+                    <a href="#" class="nav-section" data-filter="Plex Server">
+                        <i class="fas fa-play-circle me-2"></i> প্লেক্স সার্ভার
+                    </a>
+                    <a href="#" class="nav-section" data-filter="Download Apps">
+                        <i class="fas fa-download me-2"></i> ডাউনলোড অ্যাপস
+                    </a>
+                </div>
+            </div>
+
+            <!-- মূল কন্টেন্ট এলাকা -->
+            <div class="col-lg-9 col-xl-10 main-content">
+                <div class="search-box mb-4">
+                    <div class="input-group shadow-sm">
+                        <input type="text" id="searchInput" class="form-control" placeholder="🔍 লিংক অনুসন্ধান করুন... (যেমন: FTP, Plex, CircleFTP)">
+                        <span class="input-group-text bg-white border-0"><i class="fas fa-search text-warning"></i></span>
+                    </div>
+                </div>
+
+                <div id="sectionsContainer">
+                    <!-- FTP & Movie Server সেকশন -->
+                    <div class="section" data-section="FTP &amp; Movie Server">
+                        <div class="section-header text-center text-md-start">
+                            <h2><i class="fas fa-folder-open me-2"></i> FTP & মুভি সার্ভার</h2>
+                            <p>সরাসরি মুভি, সিরিজ ও কন্টেন্ট ব্রাউজ করুন</p>
+                        </div>
+                        <div class="link-grid">
+                            <a href="http://10.16.100.244/dashboard.php?session=4587dd" target="_blank" class="link-card" data-name="ICC Dashboard" data-category="ftp"><h5>ICC</h5><small>ড্যাশবোর্ড</small></a>
+                            <a href="http://172.16.50.4/" target="_blank" class="link-card" data-name="Samonline FTP" data-category="ftp"><h5>Samonline</h5></a>
+                            <a href="http://main.circleftp.net/" target="_blank" class="link-card" data-name="CircleFTP Main" data-category="ftp"><h5>CircleFTP</h5></a>
+                            <a href="http://new.circleftp.net/" target="_blank" class="link-card" data-name="CircleFTP New" data-category="ftp"><h5>CircleFTP New</h5></a>
+                            <a href="http://hd.circleftp.net/" target="_blank" class="link-card" data-name="CircleFTP HD" data-category="ftp"><h5>CircleFTP HD</h5></a>
+                            <a href="http://discoveryftp.net/" target="_blank" class="link-card" data-name="Discovery FTP" data-category="ftp"><h5>Discovery FTP</h5></a>
+                            <a href="http://103.58.73.8/" target="_blank" class="link-card" data-name="FTPBD" data-category="ftp"><h5>FTPBD</h5></a>
+                            <a href="http://moviehaat.net/" target="_blank" class="link-card" data-name="Movie Haat" data-category="ftp"><h5>Movie Haat</h5></a>
+                            <a href="http://30.30.30.150/" target="_blank" class="link-card" data-name="TimePassBD" data-category="ftp"><h5>TimePassBD</h5></a>
+                            <a href="http://30.30.30.130" target="_blank" class="link-card" data-name="Timepass CDN" data-category="ftp"><h5>Timepass CDN</h5></a>
+                            <a href="http://cinemabazar.net/" target="_blank" class="link-card" data-name="Chinemabazar" data-category="ftp"><h5>Chinemabazar</h5></a>
+                            <a href="http://172.27.27.84/" target="_blank" class="link-card" data-name="Wow FTP" data-category="ftp"><h5>Wow</h5></a>
+                            <a href="https://flixhub.net/" target="_blank" class="link-card" data-name="Flixhub" data-category="ftp"><h5>Flixhub</h5></a>
+                            <a href="http://172.19.178.179/" target="_blank" class="link-card" data-name="Cloud Media" data-category="ftp"><h5>Cloud</h5></a>
+                            <a href="http://103.225.94.27/mediaserver/" target="_blank" class="link-card" data-name="FTP Zone" data-category="ftp"><h5>FTP Zone</h5></a>
+                            <a href="http://showtimebd.com/" target="_blank" class="link-card" data-name="Showtime" data-category="ftp"><h5>Showtime</h5></a>
+                            <a href="http://10.20.30.40/" target="_blank" class="link-card" data-name="Basnet FTP" data-category="ftp"><h5>Basnet FTP</h5></a>
+                            <a href="http://ctgmovies.com/" target="_blank" class="link-card" data-name="Ctg Movies" data-category="ftp"><h5>Ctg Movies</h5></a>
+                            <a href="http://crazyctg.com/" target="_blank" class="link-card" data-name="Crazy CTG" data-category="ftp"><h5>Crazy CTG</h5></a>
+                            <a href="http://103.214.200.94/" target="_blank" class="link-card" data-name="Movie Poka" data-category="ftp"><h5>Movie Poka</h5></a>
+                            <a href="http://103.214.200.94/data/" target="_blank" class="link-card" data-name="Kenocolor" data-category="ftp"><h5>Kenocolor</h5></a>
+                            <a href="http://10.10.10.3/" target="_blank" class="link-card" data-name="FNF Media" data-category="ftp"><h5>FNF Media</h5></a>
+                            <a href="http://10.1.1.1/" target="_blank" class="link-card" data-name="FTP Media" data-category="ftp"><h5>FTP Media</h5></a>
+                        </div>
+                    </div>
+
+                    <!-- Live TV Server সেকশন -->
+                    <div class="section" data-section="Live TV Server">
+                        <div class="section-header text-center text-md-start">
+                            <h2><i class="fas fa-satellite-dish me-2"></i> লাইভ টিভি সার্ভার</h2>
+                            <p>সরাসরি সম্প্রচার ও টিভি চ্যানেল</p>
+                        </div>
+                        <div class="link-grid">
+                            <a href="http://172.19.0.18/livestream" target="_blank" class="link-card" data-name="F2M Dedicated Server" data-category="live"><h5>F2M ডেডিকেটেড</h5></a>
+                            <a href="http://redforce.live/" target="_blank" class="link-card" data-name="Redfroce Live" data-category="live"><h5>Redfroce</h5></a>
+                            <a href="http://172.19.178.180/index.php" target="_blank" class="link-card" data-name="Cloud TV" data-category="live"><h5>Cloud TV</h5></a>
+                            <a href="http://ott.11plus.live/" target="_blank" class="link-card" data-name="Timepass TV" data-category="live"><h5>Timepass TV</h5></a>
+                            <a href="https://imotv.net/" target="_blank" class="link-card" data-name="IMO TV" data-category="live"><h5>IMO TV</h5></a>
+                        </div>
+                    </div>
+
+                    <!-- Plex Server -->
+                    <div class="section" data-section="Plex Server">
+                        <div class="section-header text-center text-md-start">
+                            <h2><i class="fas fa-film me-2"></i> প্লেক্স সার্ভার</h2>
+                            <p>প্লেক্স মিডিয়া স্ট্রিমিং</p>
+                        </div>
+                        <div class="link-grid">
+                            <a href="http://www.takdhum.net/" target="_blank" class="link-card" data-name="Takdum Plex" data-category="plex"><h5>Takdum</h5></a>
+                            <a href="http://10.1.1.2:8096/" target="_blank" class="link-card" data-name="FTP Media Plex" data-category="plex"><h5>FTP Media</h5></a>
+                            <a href="http://play.11plus.live/" target="_blank" class="link-card" data-name="11Plus Plex" data-category="plex"><h5>11Plus</h5></a>
+                        </div>
+                    </div>
+
+                    <!-- Download Apps -->
+                    <div class="section" data-section="Download Apps">
+                        <div class="section-header text-center text-md-start">
+                            <h2><i class="fas fa-mobile-alt me-2"></i> ডাউনলোড অ্যাপস</h2>
+                            <p>অ্যাপ্লিকেশন ডাউনলোড লিংক</p>
+                        </div>
+                        <div class="link-grid">
+                            <a href="http://172.19.0.18:7001/download" target="_blank" class="link-card" data-name="Download Apps Repo" data-category="other"><h5>ডাউনলোড অ্যাপস</h5><small>অ্যাপস কালেকশন</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0"><i class="fas fa-crown me-1"></i> © 2026 F2M Link | সর্বস্বত্ব সংরক্ষিত | <i class="fas fa-palette"></i> আমাদের সাথেই থাকুন।❤️❤️❤️❤️</p>
+        </div>
+    </footer>
+
+    <!-- কাস্টম মোডাল (হলুদ স্বাগতম) -->
+    <div id="welcomeModal" class="custom-modal-overlay modal-pos-center">
+        <div class="custom-modal">
+            <button id="modalCloseBtn" class="custom-modal-close">&times;</button>
+            <div class="modal-body">
+                <i class="fas fa-sun fa-3x text-warning mb-2"></i>
+                <h3 class="fw-bold">✨ স্বাগতম! ✨</h3>
+                <p class="mt-3">F2M লিংকে আপনাকে উষ্ণ অভিনন্দন।<br> আপনার প্রয়োজনীয় লিংক ও মিডিয়া সার্ভার খুঁজে নিন।<br> <strong class="text-dark">Telegram Group Link  https://t.me/bdix_ebox_live_tv !</strong> 🌟</p>
+                <hr class="bg-warning">
+                <small>সব লিংক সক্রিয় ও আপডেটেড</small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ----- সার্চ এবং ফিল্টার মেকানিজম (হলুদ থিমে সজীব) -----
+            const searchInput = document.getElementById('searchInput');
+            const sectionsList = document.querySelectorAll('.section');
+            const allNavLinks = document.querySelectorAll('.nav-section');
+            let activeFilter = 'all';
+
+            // ফিল্টার ফাংশন (ক্যাটাগরি + সার্চ একত্রে)
+            function applyFilterAndSearch() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                const isFilterAll = (activeFilter === 'all');
+
+                sectionsList.forEach(section => {
+                    const sectionCategory = section.getAttribute('data-section');
+                    let sectionMatchesFilter = (isFilterAll || sectionCategory === activeFilter);
+                    
+                    if (!sectionMatchesFilter) {
+                        section.style.display = 'none';
+                        return;
+                    }
+                    
+                    // এই সেকশনের কার্ডগুলো সার্চের সাথে মিলিয়ে দেখি
+                    const cards = section.querySelectorAll('.link-card');
+                    let anyVisible = false;
+                    cards.forEach(card => {
+                        const cardName = card.getAttribute('data-name')?.toLowerCase() || '';
+                        const cardInnerText = card.innerText.toLowerCase();
+                        const matchesSearch = (searchTerm === '' || cardName.includes(searchTerm) || cardInnerText.includes(searchTerm));
+                        if (matchesSearch) {
+                            card.style.display = 'flex';
+                            anyVisible = true;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    section.style.display = anyVisible ? 'block' : 'none';
+                });
+            }
+            
+            // ক্যাটাগরি বাটনে ক্লিক
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filterValue = link.getAttribute('data-filter');
+                    activeFilter = filterValue;
+                    
+                    // অ্যাক্টিভ ক্লাস আপডেট
+                    allNavLinks.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // সার্চ ইনপুট পরিষ্কার না করলেও ফিল্টার ঠিক থাকবে, তবে ব্যবহারকারীর সুবিধার্থে সার্চ ক্লিয়ার না করলেও চলে
+                    applyFilterAndSearch();
+                    
+                    // মোবাইলে মেনু বন্ধ
+                    if (window.innerWidth <= 991) {
+                        const sidebarEl = document.getElementById('mainSidebar');
+                        const menuBtn = document.getElementById('mobileMenuBtn');
+                        if(sidebarEl && sidebarEl.classList.contains('open')) {
+                            sidebarEl.classList.remove('open');
+                            if(menuBtn) menuBtn.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // সার্চ ইভেন্ট
+            searchInput.addEventListener('input', () => {
+                applyFilterAndSearch();
+            });
+            
+            // মোবাইল টগল
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const sidebarElem = document.getElementById('mainSidebar');
+            if(mobileBtn && sidebarElem) {
+                mobileBtn.addEventListener('click', () => {
+                    sidebarElem.classList.toggle('open');
+                    mobileBtn.classList.toggle('active');
+                });
+            }
+            
+            // মোডাল শো (হলুদ থিমের স্বাগতম)
+            const modalOverlay = document.getElementById('welcomeModal');
+            const modalClose = document.getElementById('modalCloseBtn');
+            
+            if(modalOverlay) {
+                setTimeout(() => {
+                    modalOverlay.classList.add('show');
+                }, 500);
+                
+                const closeModal = () => {
+                    modalOverlay.classList.remove('show');
+                };
+                modalClose.addEventListener('click', closeModal);
+                modalOverlay.addEventListener('click', (e) => {
+                    if(e.target === modalOverlay) closeModal();
+                });
+            }
+            
+            // রেসপন্সিভ এ রিসাইজে মোবাইল মেনু বন্ধ
+            window.addEventListener('resize', function() {
+                if(window.innerWidth > 991 && sidebarElem && sidebarElem.classList.contains('open')) {
+                    sidebarElem.classList.remove('open');
+                    if(mobileBtn) mobileBtn.classList.remove('active');
+                }
+            });
+            
+            // প্রাথমিক রেন্ডার: সব দেখানো
+            applyFilterAndSearch();
+            
+            // অতিরিক্ত: যেকোনো কার্ডে হোভার অ্যানিমেশন হলুদ
+            console.log("হলুদ থিম সক্রিয়! কালার টা হলুদ করে দেওয়া হয়েছে ।");
+        })();
+    </script>
+</body>
+</html>
